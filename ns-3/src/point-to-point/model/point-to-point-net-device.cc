@@ -282,6 +282,7 @@ PointToPointNetDevice::TransmitStart (Ptr<Packet> p)
   m_txMachineState = BUSY;
   m_currentPkt = p;
   m_phyTxBeginTrace (m_currentPkt);
+  
   m_phyTxBeginTraceDetail (m_currentPkt, this->m_ifIndex, this->GetNode()->GetId());
 
   Time txTime = m_bps.CalculateBytesTxTime (p->GetSize ());
